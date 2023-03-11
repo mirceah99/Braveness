@@ -15,7 +15,7 @@ export default class Bootstrap {
       const stackAsArray: string[] = error.stack.split("\n");
 
       const errorStackLength: number = stackAsArray.length;
-      const highestLevelStack: string = stackAsArray[errorStackLength - 2];
+      const highestLevelStack: string = stackAsArray[errorStackLength - 7];
 
       const matches = highestLevelStack.match(lineRegExp);
       let match = matches ? matches[0] : null;
@@ -27,5 +27,4 @@ export default class Bootstrap {
 
       console.log('\x1b[33m%s\x1b[0m', `Logger at line: ${match}.\n`, ...args);
   }
-
 }
