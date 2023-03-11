@@ -22,7 +22,7 @@ class BraveLogs {
         const lineRegExp = /:[0-9]{1,9}:[0-9]{1,9}(\)?)/gm;
         const pathRegExp = /(?<=\().*(:)/gm;
         const stackAsArray = error.stack.split("\n");
-        const stackTargetTrace = Bootstrap.getStackLine(stackAsArray);
+        const stackTargetTrace = BraveLogs.getStackLine(stackAsArray);
         let stackPath = stackTargetTrace.match(pathRegExp)[0];
         stackPath = stackPath.substring(0, stackPath.length - 1);
         const matches = stackTargetTrace.match(lineRegExp);
