@@ -10,7 +10,7 @@ export class BraveLogs {
 
   private static getStackLine(stackArray: string[]) {
     for (let i = stackArray.length - 1; i >= 0; i--) {
-      if (stackArray[i].includes(this.logCustomId)) return stackArray[i];
+      if (stackArray[i].includes(this.logCustomId)) return stackArray[i + 1];
     }
     throw "Error detecting log line";
   }
