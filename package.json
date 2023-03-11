@@ -1,7 +1,7 @@
 {
   "name": "brave-logs",
   "version": "1.1.0",
-  "description": "The best logging sistem from npm",
+  "description": "The best logging system from npm",
   "main": "dist/index.js",
   "files": [
     "/dist"
