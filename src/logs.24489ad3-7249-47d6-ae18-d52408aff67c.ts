@@ -1,4 +1,4 @@
-export default class Bootstrap {
+export class BraveLogs {
   static logCustomId: string = "24489ad3-7249-47d6-ae18-d52408aff67c";
   private static generateError(): any {
     try {

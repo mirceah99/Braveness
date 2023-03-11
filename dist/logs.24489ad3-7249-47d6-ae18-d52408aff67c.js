@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Bootstrap {
+exports.BraveLogs = void 0;
+class BraveLogs {
     static generateError() {
         try {
             throw Error("");
@@ -33,5 +34,5 @@ class Bootstrap {
         }
     }
 }
-exports.default = Bootstrap;
-Bootstrap.logCustomId = "24489ad3-7249-47d6-ae18-d52408aff67c";
+exports.BraveLogs = BraveLogs;
+BraveLogs.logCustomId = "24489ad3-7249-47d6-ae18-d52408aff67c";
