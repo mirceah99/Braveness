@@ -1,5 +1,5 @@
 export default class Bootstrap {
-
+  static logCustomId: "24489ad3-7249-47d6-ae18-d52408aff67c";
   private static generateError(): any {
     try {
       throw Error("");
@@ -8,18 +8,25 @@ export default class Bootstrap {
     }
   }
 
+  private static getStackLine(stackArray: string[]) {
+    for (let i = stackArray.length - 1; i >= 0; i--) {
+      if (stackArray[i].includes(this.logCustomId)) return stackArray[i];
+    }
+    throw "Error detecting log line";
+  }
+
   static myLog(...args: any[]) {
     const error = this.generateError();
     const lineRegExp = /:[0-9]{1,9}:[0-9]{1,9}(\)?)/gm;
     const pathRegExp = /(?<=\().*(:)/gm;
 
     const stackAsArray: string[] = error.stack.split("\n");
-    const moduleStackIndex = stackAsArray.findIndex(stack => stack.includes('Module._compile'));
-    const highestLevelStack = stackAsArray[moduleStackIndex - 1];
-    let stackPath = highestLevelStack.match(pathRegExp)![0];
+    const stackTargetTrace = Bootstrap.getStackLine(stackAsArray);
+
+    let stackPath = stackTargetTrace.match(pathRegExp)![0];
     stackPath = stackPath.substring(0, stackPath.length - 1);
 
-    const matches = highestLevelStack.match(lineRegExp);
+    const matches = stackTargetTrace.match(lineRegExp);
     let match = matches ? matches[0] : null;
 
     if (match) {
@@ -27,9 +34,10 @@ export default class Bootstrap {
       const [line] = match.split(":");
 
       console.log(
-        '\x1b[33m%s\x1b[0m',
+        "\x1b[33m%s\x1b[0m",
         `Logger at line: ${line}. Jump: ${stackPath}\n`,
-        ...args);
+        ...args
+      );
     }
   }
 }

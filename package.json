@@ -1,14 +1,12 @@
 {
   "name": "brave-logs",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "The best logging system from npm",
   "main": "dist/index.js",
   "files": [
     "/dist"
   ],
-  "types": [
-    "dist/index.d.tx"
-  ],
+  "types": "dist/index.d.tx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
