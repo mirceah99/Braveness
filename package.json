@@ -1,0 +1,32 @@
+{
+  "name": "brave-logs",
+  "version": "1.0.0",
+  "description": "The best logging sistem from npm",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "types": [
+    "dist/index.d.tx"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirceah99/Braveness.git"
+  },
+  "keywords": [
+    "logging",
+    "github"
+  ],
+  "author": "alexZ-gabiT-mirceaH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirceah99/Braveness/issues"
+  },
+  "homepage": "https://github.com/mirceah99/Braveness#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
